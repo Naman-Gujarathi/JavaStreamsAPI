@@ -1,12 +1,15 @@
 package JavaStreams;
 import java.util.*;
+import java.util.stream.*;
 
 public class Program6 {
 
     double findAvg(List<Double> list){
-        double value = list.stream().mapToDouble(Double :: doubleValue).sum();
-        double count = list.stream().count();
-        return value/count;
+        // double value = list.stream().mapToDouble(Double :: doubleValue).sum();
+        // double count = list.stream().count();
+        // return value/count;
+
+        return list.stream().mapToDouble(Double :: doubleValue).average().getAsDouble();
     }
     public static void main(String args[]){
         // find average of a List of floating-point number using streams
